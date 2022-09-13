@@ -1,0 +1,12 @@
+first,last,id,shift,rate,salary
+Miki,Buganim,305359531,Morning,0,6000
+Shimi,Tavor,315174011,Morning,0,6000
+Bar,Refaeli,207141144,Morning,0,6000
+Michal,Vaitzeman,211884879,Morning,0,6000
+Shirel,Avrahami,318846797,Evening,0,6000
+Nicol,Raidman,341101426,Evening,0,6000
+Omer,Adam,323949214,Evening,0,6000
+Shiri,Levi,342531795,Noon-afternoon,0,6000
+Dor,Rachamim,201046869,Noon-afternoon,0,6000
+David,Arami,308478098,Noon-afternoon,0,6000
+Dvir,Sheinfeld,208498634,Noon-afternoon,0,6000

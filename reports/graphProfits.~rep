@@ -1,0 +1,107 @@
+PL/SQL Developer Report
+
+[SQL]
+--what are the profits on each month
+select month_descr,profitPerMonth
+from(select month_id,SUM(profitPerMeal) as profitPerMonth
+     from(select month_id,nameOfMeal,sumOfQuantity,price,price*sumOfQuantity as profitPerMeal
+          from(select month_id,nameOfMeal,sum(quantity) as sumOfQuantity
+               from(select distinct extract(month from dateOfOrder) as month_id, dateOfOrder 
+                    from orderOfMeal order by month_id)
+               NATURAL JOIN Mealoforder
+               NATURAL JOIN orderOfMeal
+               group by month_id,nameOfMeal)
+          NATURAL JOIN meal)
+     group by month_id)
+NATURAL JOIN 
+(select * from(select to_char(add_months(to_date('01/01/1000', 'DD/MM/RRRR'), ind.l-1), 'MONTH') as month_descr,
+                ind.l as month_id
+                from dual descr,
+           (select l
+            from (select level l 
+                  from dual 
+                connect by level <= 12
+               )
+             ) ind 
+      order by 2))
+order by month_id;
+
+[Options]
+Connect=False
+Username=
+Password=2686
+Database=
+ConnectAs=
+LockMode=0
+LockedPassword=2043
+BkgColor=-16777211
+BkgImage=
+FormLayout=False
+OnlyNBSP=False
+LeftMargin=0
+TopMargin=0
+PageBreak=0
+AddSQL=False
+HandleTags=True
+
+[Styles]
+
+{Title}
+Enabled=True
+Name=Report Title
+Description=
+Style=
+HeaderStyle=
+Align=0
+Break=0
+Function=0
+Format=
+
+{Param}
+Enabled=True
+Name=Variables
+Description=
+Style=
+HeaderStyle=
+Align=0
+Break=0
+Function=0
+Format=
+
+{Table}
+Enabled=True
+Name=Tabular Tables
+Description=
+Style=
+HeaderStyle=
+Align=0
+Break=0
+Function=0
+Format=
+
+{Form}
+Enabled=True
+Name=Form Tables
+Description=
+Style=
+HeaderStyle=
+Align=0
+Break=0
+Function=0
+Format=
+
+{Field}
+Enabled=True
+Name=Default Field
+Description=
+Style=
+HeaderStyle=
+Align=0
+Break=0
+Function=0
+Format=
+
+
+
+[CSS]
+

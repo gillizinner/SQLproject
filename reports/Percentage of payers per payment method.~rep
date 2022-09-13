@@ -1,0 +1,192 @@
+PL/SQL Developer Report
+
+[SQL]
+--what precent of the customers pay in each payment method
+select paymentMethod,countSpesificMethod,CAST(countSpesificMethod/total AS FLOAT)*100 as Precent
+from(select *
+     from(SELECT paymentMethod, COUNT(paymentMethod) AS countSpesificMethod
+          FROM payment
+          GROUP BY paymentMethod) A
+          UNION ALL
+          select *
+          from(SELECT 'SUM' paymentMethod, COUNT(paymentMethod)
+                                           FROM payment) B)C ,(SELECT 'SUM' pm, COUNT(paymentMethod) as total
+                                           FROM payment)D
+where C.paymentMethod !='SUM';
+
+[Options]
+Connect=False
+Username=
+Password=2276
+Database=
+ConnectAs=
+LockMode=0
+LockedPassword=2636
+BkgColor=-16777211
+BkgImage=
+FormLayout=False
+OnlyNBSP=False
+LeftMargin=0
+TopMargin=0
+PageBreak=0
+AddSQL=False
+HandleTags=True
+
+[Styles]
+
+{Title}
+Enabled=True
+Name=Report Title
+Description=Percentage of payers per payment method
+Style=Custom...
+HeaderStyle=
+Align=3
+Break=0
+Function=0
+Format=
+
+{Param}
+Enabled=True
+Name=Variables
+Description=
+Style=Custom...
+HeaderStyle=
+Align=1
+Break=0
+Function=0
+Format=
+
+{Table}
+Enabled=False
+Name=Tabular Tables
+Description=
+Style=Custom...
+HeaderStyle=
+Align=3
+Break=0
+Function=0
+Format=
+
+{Form}
+Enabled=False
+Name=Form Tables
+Description=
+Style=Custom...
+HeaderStyle=
+Align=0
+Break=0
+Function=0
+Format=
+
+{Field}
+Enabled=False
+Name=Default Field
+Description=
+Style=Custom...
+HeaderStyle=
+Align=3
+Break=0
+Function=0
+Format=
+
+{*}
+Enabled=True
+Name=PAYMENTMETHOD
+Description=Payment Method
+Style=Custom...
+HeaderStyle=
+Align=0
+Break=0
+Function=0
+Format=
+
+{*}
+Enabled=True
+Name=COUNTSPESIFICMETHOD
+Description=Amount
+Style=Custom...
+HeaderStyle=
+Align=0
+Break=0
+Function=2
+Format=
+
+{*}
+Enabled=True
+Name=PRECENT
+Description=Precentage
+Style=Custom...
+HeaderStyle=
+Align=0
+Break=0
+Function=0
+Format=
+
+
+
+[CSS]
+**4-Report Title
+{
+  Background: #FFFFFF;
+  Color: #000000;
+  Font-family: @Gulim;
+  Font-size: 16pt;
+  Font-weight: Bold;
+  Font-style: Normal;
+  Text-align: Left;
+}
+
+*4-PAYMENTMETHOD
+{
+  Background: #C0DCC0;
+  Font-family: @Gulim;
+  Text-align: Center;
+  Width: 50%;
+}
+
+*4-COUNTSPESIFICMETHOD
+{
+  Font-family: @Gulim;
+  Text-align: Center;
+  Width: 25%;
+}
+
+*4-PRECENT
+{
+  Font-family: @Gulim;
+  Text-align: Center;
+  Width: 50%;
+}
+
+**4-Variables
+{
+  Background: #800080;
+  Font-family: @Gulim;
+  Font-size: 8pt;
+  Text-align: Center;
+}
+
+*4-Default Field
+{
+  Background: #C0DCC0;
+  Font-size: 12pt;
+  Text-align: Center;
+}
+
+**4-Tabular Tables
+{
+  Background: #FFFFFF;
+  Border-style: outset;
+  Padding: 3px;
+  Font-family: @Gulim;
+  Text-align: Center;
+  Width: 100%;
+}
+
+**4-Form Tables
+{
+  Text-align: Center;
+  Width: 200;
+}
+
+

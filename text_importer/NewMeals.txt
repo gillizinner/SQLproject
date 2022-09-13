@@ -1,0 +1,11 @@
+name,price,type,rate,available
+water,13,Drink,0,T
+coca cola,15,Drink,0,T
+soda,13,Drink,0,T
+orange juice,15,Drink,0,T
+lemonade,16,Drink,0,T
+tea,12,Drink,0,T
+coffee,12,Drink,0,T
+chocolate milk,12,Drink,0,T
+fruit milk shake,16,Drink,0,T
+fuze tea,15,Drink,0,T

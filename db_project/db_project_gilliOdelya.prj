@@ -1,0 +1,95 @@
+PL/SQL Developer Project
+
+[Options]
+AutoConnect=0
+Username=
+Password=2069
+Database=
+ConnectAs=
+Edition=
+Workspace=
+HaltAfterError=0
+BrowseHistory=0
+FileBrowser=0
+ShowItems=-1
+
+[History]
+Programs=
+SQL Scripts=
+Report Files=
+Test Scripts=
+Command Scripts=
+Diagram Files=
+
+[BrowserFolders]
+
+
+[Groups]
+Triggers=37,38,39,40,
+Functions=36,41,
+reports=27,28,29,30,
+gibui=26,
+parameterized_queries=25,
+data_generator=10,11,12,13,14,15,16,17,
+select8_update_delete=5,6,7,
+Procedures=34,35,
+commit&rollback=32,
+grant&revoke=33,
+text_importer=8,9,18,19,20,21,22,23,24,
+views=4,
+create_drop_selectall_insert=0,1,2,3,
+alter table=31,
+integratedProject=42,43,44,45,46,47,48,
+
+[Files]
+1,0,,,Z:\sql\create_drop_selectall_insert\createTables.sql
+1,0,,,Z:\sql\create_drop_selectall_insert\dropTablesTargil1.sql
+1,0,,,Z:\sql\create_drop_selectall_insert\insert.sql
+1,0,,,Z:\sql\create_drop_selectall_insert\selectAll.sql
+1,0,,,Z:\sql\views\views.sql
+1,0,,,Z:\sql\select8_update_delete\delete.sql
+1,0,,,Z:\sql\select8_update_delete\select8.sql
+1,0,,,Z:\sql\select8_update_delete\update.sql
+1,0,,,Z:\sql\text_importer\FileScriptForPayment.sql
+1,0,,,Z:\sql\text_importer\FileScriptForWaiters.sql
+8,4,,,Z:\sql\date_generator\chefDG.gd
+8,4,,,Z:\sql\date_generator\clubMemberDG.gd
+8,4,,,Z:\sql\date_generator\mealDG.gd
+8,4,,,Z:\sql\date_generator\mealOfChefDG.gd
+8,4,,,Z:\sql\date_generator\mealOfOrderDG.gd
+8,4,,,Z:\sql\date_generator\orderOfMealDG.gd
+8,4,,,Z:\sql\date_generator\paymentDG.gd
+8,4,,,Z:\sql\date_generator\waiterDG.gd
+0,0,,,Z:\sql\text_importer\NewWaiters.txt
+0,0,,,Z:\sql\text_importer\NewPayments.txt
+0,0,,,Z:\sql\text_importer\NewMeals.txt
+1,0,,,Z:\sql\text_importer\FileScriptForPaymant.~sql
+0,0,,,Z:\sql\text_importer\definitionWaitersTextImporter.def
+0,0,,,Z:\sql\text_importer\definitionPaymentTextImporter.def
+0,0,,,Z:\sql\text_importer\definitionMealsTextImporter.def
+1,0,,,Z:\sql\parameterized_queries\parameterQueries.sql
+0,0,,,Z:\sql\gibubi\gibuiDBOracleGilliOdelya.dmp
+6,0,,,Z:\sql\reports\Percentage of payers per payment method.rep
+6,0,,,Z:\sql\reports\Best Worker Per Month.rep
+6,0,,,Z:\sql\reports\graphMeals.rep
+6,0,,,Z:\sql\reports\graphProfits.rep
+1,0,,,Z:\sql\alterTable.sql
+1,0,,,Z:\sql\Commit&RollBack.sql
+1,0,,,Z:\sql\grant&revoke.sql
+3,4,,,Z:\sql\procedures\moveRandWaiters.prc
+3,4,,,Z:\sql\procedures\informAllergens.prc
+3,4,,,Z:\sql\Functions\infronExposureToCorona.fnc
+3,4,,,Z:\sql\Triggers\addPoints.trg
+3,4,,,Z:\sql\Triggers\addRate.trg
+3,4,,,Z:\sql\Functions\checkIFordered.fnc
+3,4,,,Z:\sql\Functions\totalCalc.fnc
+3,4,,,Z:\sql\Functions\displayRandMealOptions.fnc
+1,0,,,Z:\integratedProject\integrationScheme.sql
+1,0,,,Z:\integratedProject\ourSelect8integPrj.sql
+1,0,,,Z:\integratedProject\otherSelect8interPrj.sql
+1,0,,,Z:\integratedProject\ourUpdateintegPrj.sql
+1,0,,,Z:\integratedProject\otherUpdateintegPrj.sql
+1,0,,,Z:\integratedProject\otherDeleteintegPrj.sql
+1,0,,,Z:\integratedProject\ourDeleteintegPrj.sql
+
+[Notes]

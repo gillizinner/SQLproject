@@ -1,0 +1,199 @@
+PL/SQL Developer Report
+
+[SQL]
+-----displaying the best waiter for each month
+
+select month_descr,IdOfWaiter,firstName,lastName
+from(select month_id,MAX(numOfOrders) as maxOrdersPerMonth
+     from(select month_id,IdOfWaiter,count(*) as numOfOrders
+          from(select *  
+               from(select distinct extract(month from dateOfOrder) as month_id 
+                    from orderOfMeal order by month_id),orderOfMeal where month_id=extract(month from dateOfOrder))
+           group by month_id,IdOfWaiter)
+     group by month_id) 
+NATURAL JOIN 
+(select month_id,IdOfWaiter,count(*) as numOfOrders
+     from(select *  
+          from(select distinct extract(month from dateOfOrder) as month_id 
+               from orderOfMeal order by month_id),orderOfMeal where month_id=extract(month from dateOfOrder))
+     group by month_id,IdOfWaiter)
+NATURAL JOIN
+(select * from(select to_char(add_months(to_date('01/01/1000', 'DD/MM/RRRR'), ind.l-1), 'MONTH') as month_descr,
+                ind.l as month_id
+                from dual descr,
+           (select l
+            from (select level l 
+                  from dual 
+                connect by level <= 12
+               )
+             ) ind 
+      order by 2))
+NATURAL JOIN waiter    
+where  numOfOrders = maxOrdersPerMonth
+order by month_id;
+
+[Options]
+Connect=False
+Username=
+Password=2830
+Database=
+ConnectAs=
+LockMode=0
+LockedPassword=2402
+BkgColor=-16777211
+BkgImage=
+FormLayout=False
+OnlyNBSP=False
+LeftMargin=0
+TopMargin=0
+PageBreak=0
+AddSQL=False
+HandleTags=True
+
+[Styles]
+
+{Title}
+Enabled=True
+Name=Report Title
+Description=Best Worker Per Month
+Style=Custom...
+HeaderStyle=
+Align=0
+Break=0
+Function=0
+Format=
+
+{Param}
+Enabled=True
+Name=Variables
+Description=
+Style=Custom...
+HeaderStyle=
+Align=0
+Break=0
+Function=0
+Format=
+
+{Table}
+Enabled=False
+Name=Tabular Tables
+Description=
+Style=Custom...
+HeaderStyle=
+Align=3
+Break=0
+Function=0
+Format=
+
+{Form}
+Enabled=False
+Name=Form Tables
+Description=
+Style=Custom...
+HeaderStyle=
+Align=0
+Break=0
+Function=0
+Format=
+
+{Field}
+Enabled=False
+Name=Default Field
+Description=
+Style=Custom...
+HeaderStyle=Custom...
+Align=3
+Break=0
+Function=0
+Format=
+
+{*}
+Enabled=True
+Name=MONTH_DESCR
+Description=Month
+Style=
+HeaderStyle=
+Align=0
+Break=0
+Function=0
+Format=
+
+{*}
+Enabled=True
+Name=IDOFWAITER
+Description=Id Of Waiter
+Style=
+HeaderStyle=
+Align=0
+Break=0
+Function=0
+Format=
+
+{*}
+Enabled=True
+Name=FIRSTNAME
+Description=First Name
+Style=
+HeaderStyle=
+Align=0
+Break=0
+Function=0
+Format=
+
+{*}
+Enabled=True
+Name=LASTNAME
+Description=Last Name
+Style=
+HeaderStyle=
+Align=0
+Break=0
+Function=0
+Format=
+
+
+
+[CSS]
+**4-Report Title
+{
+  Background: #FFFFFF;
+  Color: #000080;
+  Font-family: Aharoni;
+  Font-size: 16pt;
+  Text-align: Center;
+}
+
+*5-Default Field
+{
+  Background: #A6CAF0;
+  Color: #000080;
+  Font-family: Aharoni;
+  Font-size: 14pt;
+}
+
+*4-Default Field
+{
+  Background: #FFFBF0;
+  Color: #000080;
+  Border-Color: #000000;
+  Font-family: Aharoni;
+}
+
+**4-Tabular Tables
+{
+  Border-width: 5px;
+  Border-Color: #000000;
+  Width: 100%;
+}
+
+**4-Variables
+{
+  Border-Color: #000000;
+}
+
+**4-Form Tables
+{
+  Border-Color: #000000;
+}
+
+
